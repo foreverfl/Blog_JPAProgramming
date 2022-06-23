@@ -13,7 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "ORDERS")
+@Table(name = "ORDERS") // 해당 테이블의 이름을 설정한다.
 public class Order {
 
 	@Id
@@ -24,10 +24,10 @@ public class Order {
 	@Column(name = "MEMBER_ID")
 	private Long memberId;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP) // 해당 칼럼에 날짜 타입을 매핑한다.
 	private Date orderDate;
 
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING) // 해당 칼럼에 enum 타입을 매핑한다.
 	private OrderStatus status;
 
 	public Long getId() {

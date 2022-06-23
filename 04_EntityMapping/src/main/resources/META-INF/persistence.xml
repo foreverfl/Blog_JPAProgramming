@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	version="2.1">
 
-    <persistence-unit name="entityMapping">
-        <properties>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.user" value="mogumogu"/>
-            <property name="javax.persistence.jdbc.password" value="1234"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/mogumogu"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+	<persistence-unit name="entityMapping">
+		<properties>
+			<!-- 기본 접속 정보: 저자 분은 H2를 썼지만 필자는 MySQLInnoDB를 활용했다. -->
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.user"
+				value="mogumogu" />
+			<property name="javax.persistence.jdbc.password"
+				value="1234" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost/mogumogu" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL5InnoDBDialect" />
 
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.id.new_generator_mappings" value="true"/>
-        </properties>
-    </persistence-unit>
+			<!-- 테이블 자동 생성: drop 후에 create를 실행한다. -->
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+
+			<!-- SQL을 보여줌: 저자 분은 true로 설정했지만 Spring Boot에서 그렇게 하면 값이 SQL이 두 번 나와 false로 
+				설정 -->
+			<property name="hibernate.show_sql" value="false" />
+
+			<!-- SQL에 들여쓰기를 해서 보기 편하게 해줌 -->
+			<property name="hibernate.format_sql" value="true" />
+
+			<!-- 자동 키 생성을 사용할 수 있도록 해줌 -->
+			<property name="hibernate.id.new_generator_mappings"
+				value="true" />
+		</properties>
+	</persistence-unit>
 
 </persistence>
