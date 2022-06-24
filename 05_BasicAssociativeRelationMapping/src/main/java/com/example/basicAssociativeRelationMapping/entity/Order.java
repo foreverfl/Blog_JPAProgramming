@@ -52,7 +52,6 @@ public class Order {
 		this.member = member;
 		member.getOrders().add(this);
 	}
-	//
 
 	public void addOrderItem(OrderItem orderItem) {
 		orderItems.add(orderItem);
