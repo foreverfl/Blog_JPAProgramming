@@ -1,11 +1,17 @@
 package com.example.EntityMapping_03_Summary.entities;
 
-import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by holyeye on 2014. 3. 11..
- */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 @Entity
 @Table(name = "ORDERS")
 public class Order {

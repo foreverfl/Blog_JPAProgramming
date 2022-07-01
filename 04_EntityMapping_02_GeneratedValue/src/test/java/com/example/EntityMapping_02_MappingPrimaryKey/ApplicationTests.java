@@ -22,13 +22,6 @@ class ApplicationTests {
 	@Test
 	@Transactional
 	public void test() {
-
-		logic();
-
-	}
-
-	@Transactional
-	public void logic() {
 		Member member = new Member();
 		Date now;
 
@@ -52,7 +45,6 @@ class ApplicationTests {
 
 		// 한 건 조회
 		Member findMember = em.find(Member.class, 1);
-
 		System.out.println(findMember);
 
 		// 목록 조회

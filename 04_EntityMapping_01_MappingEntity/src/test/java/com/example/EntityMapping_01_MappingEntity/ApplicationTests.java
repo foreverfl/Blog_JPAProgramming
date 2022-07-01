@@ -21,7 +21,7 @@ class ApplicationTests {
 
 	@Test
 	@Transactional
-	public void logic() {
+	public void test() {
 		Member member = new Member();
 		Date now;
 		String id = "mogumogu";
@@ -43,10 +43,6 @@ class ApplicationTests {
 		now = new Date();
 		member.setLastModifiedDate(now);
 		member.setAge(30);
-
-		// 한 건 조회
-		Member findMember = em.find(Member.class, id);
-		System.out.println(findMember);
 
 		// 목록 조회
 		List<Member> members = em.createQuery("select m from Member m", Member.class).getResultList(); // JPQL
