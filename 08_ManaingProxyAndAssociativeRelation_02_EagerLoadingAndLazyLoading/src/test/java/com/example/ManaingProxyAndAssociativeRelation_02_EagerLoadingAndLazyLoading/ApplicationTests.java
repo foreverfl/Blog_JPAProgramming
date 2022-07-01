@@ -1,4 +1,4 @@
-package com.example.ManaingProxyAndAssociativeRelation_01_Proxy;
+package com.example.ManaingProxyAndAssociativeRelation_02_EagerLoadingAndLazyLoading;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -7,9 +7,8 @@ import javax.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.ManaingProxyAndAssociativeRelation_01_Proxy.entities.Member;
-import com.example.ManaingProxyAndAssociativeRelation_01_Proxy.entities.MemberProxy;
-import com.example.ManaingProxyAndAssociativeRelation_01_Proxy.entities.Team;
+import com.example.ManaingProxyAndAssociativeRelation_02_EagerLoadingAndLazyLoading.entities.Member;
+import com.example.ManaingProxyAndAssociativeRelation_02_EagerLoadingAndLazyLoading.entities.Team;
 
 @SpringBootTest
 class ApplicationTests {
@@ -20,14 +19,10 @@ class ApplicationTests {
 	@Test
 	@Transactional
 	public void test() {
-		boolean isLoad;
+		Member member = em.getReference(Member.class, "id1");
 
-		Member member_01 = em.getReference(Member.class, "id1");
-		isLoad = em.getEntityManagerFactory().getPersistenceUnitUtil().isLoaded(member_01);
-		System.out.println("isLoad= " + isLoad);
+		boolean isLoad = em.getEntityManagerFactory().getPersistenceUnitUtil().isLoaded(member);
 
-		MemberProxy member_02 = em.getReference(MemberProxy.class, "id1");
-		isLoad = em.getEntityManagerFactory().getPersistenceUnitUtil().isLoaded(member_02);
 		System.out.println("isLoad= " + isLoad);
 	}
 
