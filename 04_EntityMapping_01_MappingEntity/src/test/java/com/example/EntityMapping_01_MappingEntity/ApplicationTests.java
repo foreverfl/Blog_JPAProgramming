@@ -21,13 +21,6 @@ class ApplicationTests {
 
 	@Test
 	@Transactional
-	public void test() {
-
-		logic();
-
-	}
-
-	@Transactional
 	public void logic() {
 		Member member = new Member();
 		Date now;

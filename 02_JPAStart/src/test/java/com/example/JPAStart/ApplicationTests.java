@@ -19,19 +19,18 @@ class ApplicationTests {
 
 	@Test
 	@Transactional
-	public void logic() {
+	public void test() {
+		// 등록
 		Member member = new Member();
 		String id = "id1";
-
 		member.setId(id);
-		member.setUsername("지한");
+		member.setUsername("타로");
 		member.setAge(2);
-
-		// 등록
 		em.persist(member);
 
 		// 수정
 		member.setAge(20);
+		em.persist(member);
 
 		// 한 건 조회
 		Member findMember = em.find(Member.class, id);
