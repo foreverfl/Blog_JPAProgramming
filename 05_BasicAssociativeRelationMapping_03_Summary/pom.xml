@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>05_BasicAssociativeRelationMapping_02_BidirectionalAssociation</artifactId>
+	<artifactId>05_BasicAssociativeRelationMapping_03_Summary</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>05_BasicAssociativeRelationMapping_02_BidirectionalAssociation</name>
+	<name>05_BasicAssociativeRelationMapping_03_Summary</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

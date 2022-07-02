@@ -1,4 +1,4 @@
-package com.example.BasicAssociativeRelationMapping_02_BidirectionalAssociation;
+package com.example.BasicAssociativeRelationMapping_03_Summary;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
