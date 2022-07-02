@@ -19,8 +19,6 @@ public class Member {
 	private String street;
 	private String zipcode;
 
-	// Getter, Setter
-
 	public Long getId() {
 		return id;
 	}

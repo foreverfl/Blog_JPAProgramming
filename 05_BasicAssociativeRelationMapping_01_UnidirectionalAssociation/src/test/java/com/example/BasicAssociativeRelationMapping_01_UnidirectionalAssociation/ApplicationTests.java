@@ -17,7 +17,7 @@ import com.example.BasicAssociativeRelationMapping_01_UnidirectionalAssociation.
 import com.example.BasicAssociativeRelationMapping_01_UnidirectionalAssociation.entities.Team;
 
 @SpringBootTest
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class) // 테스트의 순서를 지정한다.
 @Commit
 class ApplicationTests {
 

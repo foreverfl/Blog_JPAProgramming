@@ -15,8 +15,8 @@ public class Member {
 
 	private String username;
 
-	@ManyToOne
-	@JoinColumn(name = "TEAM_ID")
+	@ManyToOne // 다대일 연관관계 매핑
+	@JoinColumn(name = "TEAM_ID") // 외래키 매핑
 	private Team team;
 
 	public String getId() {
