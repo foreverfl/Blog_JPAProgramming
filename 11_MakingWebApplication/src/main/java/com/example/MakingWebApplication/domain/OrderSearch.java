@@ -2,10 +2,10 @@ package com.example.MakingWebApplication.domain;
 
 public class OrderSearch {
 
-	private String memberName; // 회원 이름
-	private OrderStatus orderStatus;// 주문 상태
+	private String memberName;
+	private OrderStatus orderStatus;
 
-	// Getter, Setter
+	// getter, setter
 	public String getMemberName() {
 		return memberName;
 	}

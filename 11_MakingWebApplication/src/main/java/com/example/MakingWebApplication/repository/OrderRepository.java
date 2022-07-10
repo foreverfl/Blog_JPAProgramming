@@ -49,13 +49,13 @@ public class OrderRepository {
 		}
 		// 회원 이름 검색
 		if (StringUtils.hasText(orderSearch.getMemberName())) {
-			Join<Order, Member> m = o.join("member", JoinType.INNER); // 회원과 조인
+			Join<Order, Member> m = o.join("member", JoinType.INNER); // 회원과 조인한다.
 			Predicate name = cb.like(m.<String>get("name"), "%" + orderSearch.getMemberName() + "%");
 			criteria.add(name);
 		}
 
 		cq.where(cb.and(criteria.toArray(new Predicate[criteria.size()])));
-		TypedQuery<Order> query = em.createQuery(cq).setMaxResults(1000); // 최대 검색 1000 건으로 제한
+		TypedQuery<Order> query = em.createQuery(cq).setMaxResults(1000); // 최대 검색 1000 건으로 제한한다.
 		return query.getResultList();
 	}
 }

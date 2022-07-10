@@ -28,14 +28,14 @@ public class Order {
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "MEMBER_ID")
+	@JoinColumn(name = "MEMBER_ID") // 외래키를 소유한다.
 	private Member member; // 주문 회원
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "DELIVERY_ID")
+	@JoinColumn(name = "DELIVERY_ID") // 외래키를 소유한다.
 	private Delivery delivery; // 배송정보
 
 	private Date orderDate; // 주문시간
@@ -43,7 +43,7 @@ public class Order {
 	@Enumerated(EnumType.STRING)
 	private OrderStatus status;// 주문상태
 
-	// ==생성 메서드==//
+	// 생성 메서드
 	public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
 
 		Order order = new Order();
@@ -57,8 +57,7 @@ public class Order {
 		return order;
 	}
 
-	// ==비즈니스 로직==//
-	/** 주문 취소 */
+	// 주문 취소
 	public void cancel() {
 
 		if (delivery.getStatus() == DeliveryStatus.COMP) {
@@ -71,8 +70,7 @@ public class Order {
 		}
 	}
 
-	// ==조회 로직==//
-	/** 전체 주문 가격 조회 */
+	// 전체 주문 가격 조회
 	public int getTotalPrice() {
 		int totalPrice = 0;
 		for (OrderItem orderItem : orderItems) {
@@ -81,7 +79,7 @@ public class Order {
 		return totalPrice;
 	}
 
-	// ==연관관계 메서드==//
+	// 연관관계 메서드
 	public void setMember(Member member) {
 		this.member = member;
 		member.getOrders().add(this);
@@ -97,7 +95,7 @@ public class Order {
 		delivery.setOrder(this);
 	}
 
-	// ==Getter, Setter==//
+	// getter, setter
 	public Long getId() {
 		return id;
 	}

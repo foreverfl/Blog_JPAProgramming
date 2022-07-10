@@ -10,10 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-/**
- * Created by holyeye on 2014. 3. 11..
- */
-
 @Entity
 public class Member {
 

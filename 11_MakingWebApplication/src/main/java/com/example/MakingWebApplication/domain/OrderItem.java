@@ -21,17 +21,17 @@ public class OrderItem {
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ITEM_ID")
-	private Item item; // 주문 상품
+	@JoinColumn(name = "ITEM_ID") // 외래키를 소유한다.
+	private Item item;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ORDER_ID")
-	private Order order; // 주문
+	@JoinColumn(name = "ORDER_ID") // 외래키를 소유한다.
+	private Order order;
 
-	private int orderPrice; // 주문 가격
-	private int count; // 주문 수량
+	private int orderPrice;
+	private int count;
 
-	// ==생성 메서드==//
+	// 생성 메서드
 	public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
 
 		OrderItem orderItem = new OrderItem();
@@ -43,19 +43,17 @@ public class OrderItem {
 		return orderItem;
 	}
 
-	// ==비즈니스 로직==//
-	/** 주문 취소 */
+	// 주문 취소
 	public void cancel() {
 		getItem().addStock(count);
 	}
 
-	// ==조회 로직==//
-	/** 주문상품 전체 가격 조회 */
+	// 주문상품 전체 가격 조회
 	public int getTotalPrice() {
 		return getOrderPrice() * getCount();
 	}
 
-	// ==Getter, Setter==//
+	// getter, setter
 	public Long getId() {
 		return id;
 	}

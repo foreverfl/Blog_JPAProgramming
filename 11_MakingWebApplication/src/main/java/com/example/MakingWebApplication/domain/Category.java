@@ -29,6 +29,7 @@ public class Category {
 	@ManyToMany
 	@JoinTable(name = "CATEGORY_ITEM", joinColumns = @JoinColumn(name = "CATEGORY_ID"), inverseJoinColumns = @JoinColumn(name = "ITEM_ID"))
 	private List<Item> items = new ArrayList<Item>();
+	// @JoinTable을 이용해서 @ManyToMany를 이용한다.
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PARENT_ID")
@@ -37,7 +38,7 @@ public class Category {
 	@OneToMany(mappedBy = "parent")
 	private List<Category> child = new ArrayList<Category>();
 
-	// ==연관관계 메서드==//
+	// 연관관계 메서드
 	public void addChildCategory(Category child) {
 		this.child.add(child);
 		child.setParent(this);

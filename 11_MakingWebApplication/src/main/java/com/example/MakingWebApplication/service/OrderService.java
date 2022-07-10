@@ -27,7 +27,7 @@ public class OrderService {
 	@Autowired
 	ItemService itemService;
 
-	/** 주문 */
+	// 주문
 	public Long order(Long memberId, Long itemId, int count) {
 
 		// 엔티티 조회
@@ -46,7 +46,7 @@ public class OrderService {
 		return order.getId();
 	}
 
-	/** 주문 취소 */
+	// 주문 취소
 	public void cancelOrder(Long orderId) {
 
 		// 주문 엔티티 조회
@@ -56,7 +56,7 @@ public class OrderService {
 		order.cancel();
 	}
 
-	/** 주문 검색 */
+	// 주문 검색
 	public List<Order> findOrders(OrderSearch orderSearch) {
 		return orderRepository.findAll(orderSearch);
 	}

@@ -9,9 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.MakingWebApplication.domain.item.Item;
 import com.example.MakingWebApplication.repository.ItemRepository;
 
-/**
- * User: HolyEyE Date: 2013. 12. 3. Time: 오후 9:43
- */
 @Service
 @Transactional
 public class ItemService {
